@@ -12,3 +12,4 @@
     - A merge conflict is when 2 or more users edit files and try to merge back together but they have different code on the same lines. I've seen tutorials where they manually change their code to solve the merge conflict but for now I am unsure if there are better ways to solve them.
 
 *Edit for Release 2: Tag Your Teacher
+
