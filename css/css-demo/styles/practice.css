@@ -13,3 +13,11 @@
 .accomplishments{
   font-size: .8em;
 }
+
+#circus:hover{
+    background-color: blue;
+}
+
+ul > li{
+  list-style-type: disc;
+}
