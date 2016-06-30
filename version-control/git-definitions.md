@@ -10,3 +10,6 @@
     - A commit is an instance of that file that is saved in time. A user is able to rollback to any commit. A good commit message is that one specifies what changes were made and to which files, the more specific the better.
 * What is a merge conflict?
     - A merge conflict is when 2 or more users edit files and try to merge back together but they have different code on the same lines. I've seen tutorials where they manually change their code to solve the merge conflict but for now I am unsure if there are better ways to solve them.
+
+*Edit for Release 2: Tag Your Teacher
+
