@@ -30,6 +30,8 @@ cite {
   width: 20%;
   /*min-width: 15%;*/
   position: relative;
+  /*display: inline-block;
+  vertical-align: top;*/
 }
 
 #main{
