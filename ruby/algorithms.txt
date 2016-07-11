@@ -1,0 +1,7 @@
+- Walk up to elevator
+- Press up or down button to call it to your floor
+- When the doors open, let people get out
+- If no one else is getting out, walk inside of the elevator
+- Once inside, turn to the panel where all the buttons are located. Raise your hand and press the button that corresponds to the floor you would like to go to.
+- Let the elevator move to the floors where people have indicated they would like to get on or off. Check the floor indicator to see if it is the floor you've selected.
+- Wait until the indicator is for the floor you chose, once they match, wait for the doors to open and then exit the elevator.
