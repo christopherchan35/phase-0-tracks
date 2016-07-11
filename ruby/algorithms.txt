@@ -1,3 +1,4 @@
+Algorithm for using an elevator:
 - Walk up to elevator
 - Press up or down button to call it to your floor
 - When the doors open, let people get out
@@ -5,3 +6,12 @@
 - Once inside, turn to the panel where all the buttons are located. Raise your hand and press the button that corresponds to the floor you would like to go to.
 - Let the elevator move to the floors where people have indicated they would like to get on or off. Check the floor indicator to see if it is the floor you've selected.
 - Wait until the indicator is for the floor you chose, once they match, wait for the doors to open and then exit the elevator.
+
+Algorithm for eating:
+1. Place food into a bowl or plate, whatever is appropriate for the type of food.
+2. Grab the proper utensil (fork/spoon/knife/etc)
+3. Put the bowl/plate down on a table and sit down on a chair next to the table.
+4. Using the utentil or your hands, pick up some of the food and slowly bring it closer to your mouth.
+5. Open your mouth, if the food is hot or steaming, blow on the food first to cool it down. Then insert the food into your mouth.
+6. Once the food is inside, take the utensil out of your mouth and close your mouth. Then begin chewing with your teeth and moving the food around with your tongue.
+7. When the food is properly chewed and mashed up, swallow and repeat steps 4-7 until satisfied.
