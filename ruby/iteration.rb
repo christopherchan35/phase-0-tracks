@@ -123,6 +123,7 @@ p remove_women(students)
 
 puts "\n#4\n"
 grades = [ 83, 62, 95, 80, 93, 100]
+=begin
 def a_students(list)
   list.delete_if do |score|
     if score <= 90
@@ -133,6 +134,10 @@ def a_students(list)
   end
   list
 end
+=end
 
+def a_students(list)
+  list.drop_while { |score| score <= 90 }
+end
 p a_students(grades)
 
