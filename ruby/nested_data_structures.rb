@@ -21,7 +21,7 @@ utensil_drawer = {
       total: 15,
       dirty: 5,
       clean: 10
-    }
+    },
     types: [
       'Soup',
       'Tea',
@@ -35,7 +35,7 @@ utensil_drawer = {
       total: 5,
       dirty: 1,
       clean: 4
-    }
+    },
     types: [
       'Bread',
       'Butter',
@@ -43,3 +43,8 @@ utensil_drawer = {
     ]
   }
 }
+p "The 3 components of any good utensil drawer are #{utensil_drawer[:fork][:title]}, #{utensil_drawer[:spoon][:title]}, and #{utensil_drawer[:knife][:title]}."
+
+p "In total there are #{utensil_drawer[:spoon][:amount][:total]} spoons, #{utensil_drawer[:spoon][:amount][:dirty]} of which are dirty and #{utensil_drawer[:spoon][:amount][:clean]} that are clean."
+
+p "It should also offer the knife staples: #{utensil_drawer[:knife][:types][0]}, #{utensil_drawer[:knife][:types][1]}, and #{utensil_drawer[:knife][:types][2]}."
