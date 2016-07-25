@@ -65,16 +65,9 @@ p "Enter name you would like to swap: ('quit' when finished)"
 name = gets.chomp
   if name != 'quit'
     fake_names.push(name)
-    #fake_names.push(swapper(name))
   end
 end
-=begin
-  while i < fake_names.length
-    p "#{swapper(fake_names[i])} is actually #{swapper(fake_names[i])}"
-    end
 
-  i+=1
-=end
 fake_names.each do |name|
   p "#{name} is actually known as #{swapper(name)}"
 end
