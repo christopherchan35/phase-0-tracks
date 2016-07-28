@@ -11,6 +11,20 @@ class Santa
     @age = 0
   end
 
+# getter methods
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
   def say_name
     puts "My name is #{@name}"
   end
@@ -21,6 +35,14 @@ class Santa
 
   def eat_milk_and_cookies(cookie_type)
     puts "That was a good #{cookie_type} cookie"
+  end
+
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at(reindeer_name)
+
   end
 end
 
