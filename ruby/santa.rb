@@ -42,21 +42,20 @@ class Santa
   end
 
   def get_mad_at(reindeer_name)
-
+    #@reindeer_ranking.map! do |name|
+    i = 0
+    while i < @reindeer_ranking.length
+      if reindeer_name.to_s == @reindeer_ranking[i].to_s
+        @reindeer_ranking[i] = @reindeer_ranking[-1]
+        @reindeer_ranking[8] = reindeer_name
+      end
+      i+=1
+    end
+    @reindeer_ranking
   end
 end
 
 santas = []
-=begin
-santas << Santa.new("agender", "black")
-santas << Santa.new("female", "Latino")
-santas << Santa.new("bigender", "white")
-santas << Santa.new("male", "Japanese")
-santas << Santa.new("female", "prefer not to say")
-santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
-santas << Santa.new("N/A", "N/A")
-p santas
-=end
 example_names = ["Larry", "Gary", "Jerry", "Stephanie", "Cindy", "Penelope", "N/A"]
 example_genders = [ "agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = [ "black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
@@ -68,3 +67,7 @@ end
 santas.each do |name|
   puts name.say_name
 end
+
+p santas[0].celebrate_birthday
+p santas[0].gender = "N/A"
+p santas[0].get_mad_at("Vixen")
