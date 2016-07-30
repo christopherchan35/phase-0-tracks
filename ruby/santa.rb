@@ -2,6 +2,9 @@
 # Release 0: Bring Santa to Life
 
 class Santa
+  attr_reader :ethnicity, :name
+  attr_accessor :gender, :age
+
   def initialize(name, gender, ethnicity)
     #puts "Initializing Santa instance..."
     @name = name
@@ -9,20 +12,6 @@ class Santa
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = 0
-  end
-
-# getter methods
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
-  def gender=(new_gender)
-    @gender = new_gender
   end
 
   def say_name
@@ -60,6 +49,7 @@ example_names = ["Larry", "Gary", "Jerry", "Stephanie", "Cindy", "Penelope", "N/
 example_genders = [ "agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = [ "black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
+=begin
 example_genders.length.times do |i|
   santas << Santa.new(example_names[i], example_genders[i], example_ethnicities[i])
 end
@@ -71,3 +61,15 @@ end
 p santas[0].celebrate_birthday
 p santas[0].gender = "N/A"
 p santas[0].get_mad_at("Vixen")
+=end
+
+100.times do |santa|
+  santa = Santa.new(example_names.sample, example_genders.sample, example_ethnicities.sample)
+  santa.age = rand(0..140)
+  puts santa.name
+  puts santa.gender
+  puts santa.ethnicity
+  puts santa.age
+  puts " "
+
+end
