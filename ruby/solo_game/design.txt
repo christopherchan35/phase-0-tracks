@@ -1,0 +1,7 @@
+- create a class for word guessing game
+- create additional file with driver code
+- drive should take in a word, and let another use guess the word
+- user #2 can only guess up to word.length
+- repeated guesses do not count towards the counter of total guesses
+- after each guess, user will see current state of the word with their correct guesses
+- display message after user has won or used up all their guesses.
