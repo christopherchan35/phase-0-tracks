@@ -1,6 +1,6 @@
 class Game
   attr_accessor :word, :guess_letter,
-    :guess_count
+    :guess_count, :game_won
 
   def initialize
     @word = word
@@ -15,8 +15,9 @@ class Game
     answer.length.times { @answer << '-'}
   end
 
-  def guess()
-    if !@game_won
+  def guess
+    #if !@game_won
+    if @answer.include?('-')
       i = 0
       @word.each_char do |letter|
         if @guess_letter == letter
@@ -37,6 +38,14 @@ class Game
 
     print @answer.join('')
     puts ' '
+  end
+
+  def check
+    if !@answer.include?('-')
+      @game_won = true
+    else
+      @game_won = false
+    end
   end
 
   def add_to_guesses

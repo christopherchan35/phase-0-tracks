@@ -12,18 +12,20 @@ game.guess_letter = gets.chomp
 game.generate_answer(game.word)
 game.guess
 game.add_to_guesses
+game.check
 
-while game.guess_count != game.word.length
+while game.guess_count < game.word.length
   puts "Enter a letter: "
   game.guess_letter = gets.chomp
   game.guess
   game.add_to_guesses
+  game.check
 end
 
-if game.guess_count == game.word.length
-  if !@game_won
+if game.guess_count >= game.word.length
+  if !game.game_won
     puts "Better luck next time"
-  else
+  elsif game.game_won
     puts "Congrats!"
   end
 end
