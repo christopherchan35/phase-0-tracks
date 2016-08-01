@@ -1,6 +1,6 @@
 class Game
   attr_accessor :word, :guess_letter,
-    :guess_count, :game_won
+    :guess_count, :game_won, :answer
 
   def initialize
     @word = word
