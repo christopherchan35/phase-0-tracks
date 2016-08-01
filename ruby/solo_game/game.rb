@@ -16,7 +16,6 @@ class Game
   end
 
   def guess
-    #if !@game_won
     if @answer.include?('-')
       i = 0
       @word.each_char do |letter|
