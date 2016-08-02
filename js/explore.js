@@ -10,7 +10,11 @@ function reverse(word){
   for(var i = word.length - 1; i >= 0; i--){
     new_string += word[i];
   }
-  console.log(new_string);
+  //console.log(new_string);
+  return new_string;
 }
 
-reverse("hello");
+reverse_string = reverse("hello");
+if (1 == 1){
+  console.log(reverse_string);
+}
