@@ -14,3 +14,7 @@ function longest(array_of_strings){
 }
 
 console.log(longest(["long phrase", "longest phrase", "longer phrase"]));
+
+console.log(longest(["a", "aa", "aaa"]));
+
+console.log(longest(["this should be the longest word in the string", "this is not", "neither is this"]));
