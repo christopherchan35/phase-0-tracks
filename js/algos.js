@@ -1,4 +1,4 @@
-// release 0
+// release 0: Find the Longest Phrase
 // 1. create a function that takes in an array of strings
 // 2. look at the string in each index and determine its length
 // 3. return the word with the longest length (string.length)
@@ -19,7 +19,7 @@ console.log(longest(["a", "aa", "aaa"]));
 
 console.log(longest(["this should be the longest word in the string", "this is not", "neither is this"]));
 
-// release 1
+// release 1: Find a Key-Value Match
 // 1. create a function that takes in 2 objects
 // 2. compare the objects (which will be hashes) to see if they both have the same key-value pair
 // 3. if there is a match then return true. otherwise return false
@@ -50,5 +50,28 @@ var girls = {name: "Betty", age: 6};
 
 console.log(find_match(boys, girls));
 
-// release 2
+// release 2: Generate Random Test Data
+// 1. create a function that takes in an integer
+// 2. that integer will create an array with length of the passed in integer and fill it with strings
+// 3. the strings themselves should be of randomly varying length. it has a minimum of 1 letter and a maximum of 10
 
+function random_array(number_of_strings){
+  var array = [];
+  var alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  for(var i = 0; i < number_of_strings; i++){
+    // create random string here
+    var random_string = "";
+    var random_length = Math.floor(Math.random() * 10) + 1
+    for(var j = 0; j < random_length; j++){
+      random_string += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+    }
+    array.push(random_string);
+  }
+  console.log(array);
+  return array;
+}
+
+for (var i = 0; i < 10; i++){
+  console.log(longest(random_array(3)));
+}
