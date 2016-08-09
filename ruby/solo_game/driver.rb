@@ -16,7 +16,7 @@ game.guess
 game.add_to_guesses
 game.check
 
-while game.guess_count < game.word.length
+while game.guess_count < (game.word.length) * 1.5
   puts "Enter a letter: "
   game.guess_letter = gets.chomp
   game.guess
@@ -24,10 +24,10 @@ while game.guess_count < game.word.length
   game.check
 end
 
-if game.guess_count >= game.word.length
-  if !game.game_won
+if (game.guess_count >= game.word.length)
+  if game.game_won == false
     puts "Better luck next time"
-  elsif game.game_won
+  elsif game.game_won == true
     puts "Congrats!"
   end
 end
