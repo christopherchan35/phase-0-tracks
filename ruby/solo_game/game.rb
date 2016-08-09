@@ -40,10 +40,10 @@ class Game
   end
 
   def check
-    if !@answer.include?('-')
-      @game_won = true
-    else
+    if @answer.include?('-')
       @game_won = false
+    else
+      @game_won = true
     end
   end
 
