@@ -1,3 +1,4 @@
+=begin
 # create a hash that will be filled up
 # ask user for name, save as string in hash
 # ask user for age, save as symbol in hash
@@ -45,3 +46,42 @@ else
 end
 
 p client_info
+=end
+
+# Release 3: Use a Hash in a Program
+# 1. grab data from user for name, age, number of children, and decor theme
+# 2. use this data as the values in a hash in appropriate data type (convert numbers to int, name to string, etc)
+# 3. make the keys of the hash symbols
+# 4. print the hash back when user is done with input
+# 5. let the user update a key if they'd like, otherise they can enter none
+# 6. print the hash one last time and exit Program
+
+client = {}
+
+p "Please enter your name: "
+client[:name] = gets.chomp.to_s
+p "Your age: "
+client[:age] = gets.chomp.to_i
+p "Number of children: "
+client[:children] = gets.chomp.to_i
+p "Decor theme: "
+client[:theme] = gets.chomp.to_s
+
+p client
+
+p "Would you like to make any corrections? (y/n)"
+choice = gets.chomp
+if choice == 'Y' || choice == 'y'
+  client.keys.each do |key, value|
+    p "Would you like to update #{key}? (y/n)"
+    choice2 = gets.chomp
+    if choice2 == 'Y' || choice2 == 'y'
+      p "Enter new value: "
+      choice3 = gets.chomp
+      client[:key] = choice3
+    end
+  end
+end
+
+p client
+
