@@ -36,3 +36,21 @@ another_array = ['a', 'b', 'c', 'd', 'e']
 # 8. Add the two arrays together and store them in a new variable. Print the new array.
 super_array = test_array + another_array
 p super_array
+
+# Release 2: Use Arrays in Methods
+def build_array(name, age, eye_color)
+  arr = []
+  arr << name
+  arr << age
+  arr << eye_color
+end
+
+def add_to_array(list, new_item)
+  list << new_item
+end
+
+p build_array("Chris", 25, "brown")
+
+p add_to_array(test_array, 400)
+p add_to_array(another_array, 'f')
+p add_to_array(super_array, "zomg")
