@@ -142,6 +142,7 @@
 # p a_students(grades)
 
 # Release 0: Explore Blocks
+
 def greeting
   puts "###### BEFORE THE BLOCK ######"
   puts "Hello World!"
@@ -150,3 +151,29 @@ def greeting
 end
 
 greeting { |location| puts "Goodbye #{location}!"}
+puts ""
+
+# Release 1: Use each, map, and map!
+
+shoe_brands = ['nike', 'adidas', 'converse', 'puma']
+foods = {banana: 'fruit', steak: 'beef', carrot: 'vegetable', bread: 'grain'}
+
+# iterate through each collection using .each
+
+shoe_brands.each { |brand| puts "I love my #{brand} shoes!"}
+
+puts
+
+foods.each { |food, category| puts "A #{food} can be categorized as a #{category}"}
+
+# iterate through collection using .map! and modifying some data
+puts
+p "Before .map!:"
+p shoe_brands
+
+shoe_brands.map! do |brand|
+  brand.capitalize
+end
+puts
+p "After .map!:"
+p shoe_brands
