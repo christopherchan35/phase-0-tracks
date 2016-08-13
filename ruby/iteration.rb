@@ -177,3 +177,62 @@ end
 puts
 p "After .map!:"
 p shoe_brands
+
+# Release 2: Use the Documentation
+
+# 1. A method that iterates through the items, deleting any that meet a certain condition (for example, deleting any numbers that are less than 5).
+
+example_array = ['a', 'b', 'c', 'd', 'e']
+example_hash = {1 => 'one', 2 => 'two', 3 => 'three', 4 => 'four', 5 => 'five'}
+
+puts
+puts "***** ORIGINAL DATA *****"
+puts "#{example_array}"
+puts "#{example_hash}"
+puts
+
+puts "#1: "
+# delete characters that are vowels
+p example_array.delete_if { |char| ['a', 'e', 'i', 'o', 'u'].include?(char) }
+# deletes keys that are less than 3
+p example_hash.delete_if { |digit, word| digit < 3}
+
+# 2. A method that filters a data structure for only items that do satisfy a certain condition (for example, keeping any numbers that are less than 5).
+example_array = ['a', 'b', 'c', 'd', 'e']
+example_hash = {1 => 'one', 2 => 'two', 3 => 'three', 4 => 'four', 5 => 'five'}
+
+puts
+puts "#2: "
+# keeps characters that are vowels
+p example_array.keep_if { |char| char =~ /[aeiou]/ }
+# keeps keys that are even
+p example_hash.delete_if { |digit, word| digit % 2 > 0 }
+
+# 3.A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
+
+example_array = ['a', 'b', 'c', 'd', 'e']
+example_hash = {1 => 'one', 2 => 'two', 3 => 'three', 4 => 'four', 5 => 'five'}
+
+puts
+puts "#3: "
+# deletes characters that are vowels, needs to be set to a new array
+rejected_array = example_array.reject { |char| char =~ /[aeiou]/ }
+p rejected_array
+p example_array
+# keeps key-value pairs that are odd, needs to be set to a new hash
+selected_hash = example_hash.select { |digit, word| digit % 2 == 0 }
+p selected_hash
+p example_hash
+
+# 4.A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
+
+example_array = ['a', 'b', 'c', 'd', 'e']
+example_hash = {1 => 'one', 2 => 'two', 3 => 'three', 4 => 'four', 5 => 'five'}
+
+puts
+puts "#4: "
+# drops characters until it comes across the letter c
+dropped_array = example_array.drop_while { |char| char != 'c' }
+p dropped_array
+p example_array
+#
