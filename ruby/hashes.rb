@@ -78,7 +78,7 @@ if choice == 'Y' || choice == 'y'
     if choice2 == 'Y' || choice2 == 'y'
       p "Enter new value: "
       choice3 = gets.chomp
-      client[:key] = choice3
+      client[key] = choice3
     end
   end
 end
