@@ -11,17 +11,12 @@ def swapper(spy_name)
   swap_name = []
   # Splits the name by whitespace
   spy_array = spy_name.split(' ')
-  # Use temp variable to hold a value to swap
-  temp = spy_array[0]
-  # Swap first and last name
-  spy_array[0] = spy_array[1].downcase
-  spy_array[1] = temp.downcase
 
   # Split each name into its own array, split by chars, this is done to more easily capitalize the first letter of each name before joining
-  spy_last = spy_array[0].split('')
-  spy_first = spy_array[1].split('')
+  spy_last = spy_array[1].downcase.split('')
+  spy_first = spy_array[0].downcase.split('')
 
-  vowels = ['a', 'e', 'i', 'o', 'u']
+  vowels = ['a', 'e', 'i', 'o', 'u', 'a']
   consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
 
   spy_last.map! do |letter|
@@ -41,18 +36,10 @@ def swapper(spy_name)
 end
 
 def next_char(char, vowels, consonants)
-  if char == 'a'
-    'e'
-  elsif char == 'e'
-    'i'
-  elsif char == 'i'
-    'o'
-  elsif char == 'o'
-    'u'
-  elsif char == 'u'
-    'a'
+  if vowels.include?(char)
+    vowels[vowels.index(char) + 1]
   else
-    consonants[consonants.index(char)+1]
+    consonants[consonants.index(char) + 1]
   end
 end
 
