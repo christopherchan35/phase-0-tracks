@@ -1,7 +1,8 @@
 class Puppy
 
+  # called each time .new is used
   def initialize
-    puts "Initializing new puppy instance ..."
+    puts "Initializing new puppy instance"
   end
 
   def fetch(toy)
@@ -10,63 +11,58 @@ class Puppy
   end
 
   def speak(num)
-    num.times { p "woof" }
+    num.times { puts "Woof!" }
   end
 
   def roll_over
     puts "*rolls over*"
   end
 
-  def dog_years(num)
-    num * 7
+  def dog_years(human_years)
+    human_years * 7
   end
 
   def plays_dead
-    puts "*lays on back*"
+    puts "*plays dead*"
   end
 
 end
 
+doggy = Puppy.new
+doggy.fetch("ball")
+doggy.speak(3)
+doggy.roll_over
+puts doggy.dog_years(10)
+doggy.plays_dead
+puts "\n"
 
-# pup = Puppy.new
-# pup.fetch("ball")
-# pup.speak(3)
-# pup.roll_over
-# p pup.dog_years(5)
-# pup.plays_dead
-
-
-class Cat
+class Kitten
 
   def initialize
-    #puts "Made a cat!"
+    puts "Initializing kitten instance"
   end
 
-  def killed_mouse(num_mice)
-    num_mice.times { |num| p "Killed mouse number #{num+1}" }
+  def hiss(cat_name, human_name)
+    puts "#{cat_name} hissed at #{human_name}"
   end
 
-  def eat
-    puts "*ate some food*"
-  end
-
-  def sunbathed(num_hours)
-    p "Sunbathed for like, #{num_hours} hours... useless..."
+  def puke
+    puts "*pukes on rug*"
   end
 
 end
 
-cats = []
-50.times { cats << Cat.new }
+cat_array = []
 
-cats.each do |cat|
-  cat.eat
-  cat.sunbathed(10)
+50.times do
+  cat_array << Kitten.new
 end
 
-#p cats[0].object_id
+names = ["Bob", "Sally", "Nancy", "Steve", "John"]
+cat_names = ["Felix", "Garfield", "Tom", "Kerouac"]
 
-# felix = Cat.new
-# felix.killed_mouse(3)
-# felix.eat
-# felix.sunbathed(5)
+cat_array.each do |kitten|
+  kitten.hiss(cat_names[rand(4)], names[rand(5)])
+  kitten.puke
+  puts "\n"
+end
