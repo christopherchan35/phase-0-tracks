@@ -101,3 +101,11 @@ update_item("Lemonade", 0, groceries)
 update_item("Ice Cream", 1, groceries)
 
 print_list(groceries)
+
+# Release 5: Reflect
+  # * This lesson reestablished how important pseudocode is and how it can pave the way when you actually write code. I find it easier to write the program if I am thorough with the pseudocode.
+  # * If an array was used here, you would need twice as many elements to hold both the item name and the quantity. I'm not too sure about the benefits of using an array over a hash in this example. But a hash is useful here because it is able to hold both the item name and the quantity as a key-value pair.
+  # * A method should return the last line through implicit return.
+  # * I think you're able to pass in any object as data into a method, so that could be a string, an array or hash, integers, etc. I have a feeling you can pass method calls as arguments as well but will need to test that out.
+  # * You can either call methods within one another and hold that value with a variable. You can also do this outside of the methods, as a global variable and pass it into another variable.
+  # * I am more confident with the creation of methods and testing methods with puts statements. A concept that is not necessarily confusing, but I would like to practice more is daisy chaining, or multiple method chaining. It would be nice to be able to write code like that on line 21, but at this point in time would require too much time to read and understand.
