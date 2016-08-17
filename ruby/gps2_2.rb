@@ -10,7 +10,7 @@
 # hash filled with string/symbols and integer
 
 
-def create_list(list_of_items)
+def create_list(list_of_items="")
   list_of_groceries = {}
   list = list_of_items.split(' ')
 
@@ -21,7 +21,7 @@ def create_list(list_of_items)
   list_of_groceries
 end
 
-grocery_list = create_list("carrots apples cereal pizza")
+# grocery_list = create_list("carrots apples cereal pizza")
 # puts grocery_list
 
 
@@ -42,9 +42,9 @@ def update_item(item_name, item_quantity, list_of_groceries)
   list_of_groceries
 end
 
-update_item("cookies", 3, grocery_list)
-update_item("carrots", 0, grocery_list)
-update_item("apples", 5, grocery_list)
+# update_item("cookies", 3, grocery_list)
+# update_item("carrots", 0, grocery_list)
+# update_item("apples", 5, grocery_list)
 
 
 # Method to remove an item from the list
@@ -87,4 +87,26 @@ def print_list(list_of_groceries)
   end
 end
 
-print_list(grocery_list)
+# print_list(grocery_list)
+
+# Create a new list
+# Add the following items to your list
+# Lemonade, qty: 2
+# Tomatoes, qty: 3
+# Onions, qty: 1
+# Ice Cream, qty: 4
+# Remove the Lemonade from your list
+# Update the Ice Cream quantity to 1
+# Print out your list (Is this readable and nice looking)?
+
+# Driver code:
+groceries = create_list()
+update_item("Lemonade", 2, groceries)
+update_item("Tomatoes", 3, groceries)
+update_item("Onions", 1, groceries)
+update_item("Ice Cream", 4, groceries)
+
+update_item("Lemonade", 0, groceries)
+update_item("Ice Cream", 1, groceries)
+
+print_list(groceries)
