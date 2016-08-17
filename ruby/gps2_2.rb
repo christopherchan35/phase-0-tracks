@@ -10,6 +10,20 @@
 # hash filled with string/symbols and integer
 
 
+def create_list(list_of_items)
+  list_of_groceries = {}
+  list = list_of_items.split(' ')
+
+  # list.each do |item|
+  #   grocery_list[item] = 1
+  # end
+  list.each { |item| list_of_groceries[item] = 1 }
+  list_of_groceries
+end
+
+grocery_list = create_list("carrots apples cereal pizza")
+# puts grocery_list
+
 
 # Method to add an item to a list
 # input: item name and optional quantity
@@ -19,6 +33,18 @@
 # output:
   # 1. display newly added item and quantity
 
+def update_item(item_name, item_quantity, list_of_groceries)
+  if item_quantity == 0
+    list_of_groceries.delete(item_name)
+  else
+    list_of_groceries[item_name] = item_quantity
+  end
+  list_of_groceries
+end
+
+update_item("cookies", 3, grocery_list)
+update_item("carrots", 0, grocery_list)
+update_item("apples", 5, grocery_list)
 
 
 # Method to remove an item from the list
@@ -29,6 +55,12 @@
 # output:
   # 1. print out "removed #{item_name}"
 
+# def remove_item(item_name, list_of_groceries)
+#   list_of_groceries.delete(item_name)
+#   list_of_groceries
+# end
+
+# puts remove_item("carrots", grocery_list)
 
 # Method to update the quantity of an item
 # input: item name and new quantity
@@ -47,3 +79,12 @@
   # 2. print out each key(item name) and value (quantity)
 # output:
   # 1. print out "Item: #{item_name} - Quantity: #{quantity}"
+
+def print_list(list_of_groceries)
+  puts "Grocery List: "
+  list_of_groceries.each do |item_name, quantity|
+    puts "Item: #{item_name} - Quantity: #{quantity}"
+  end
+end
+
+print_list(grocery_list)
