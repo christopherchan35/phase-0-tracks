@@ -77,8 +77,12 @@
 # Module 6.3: Attributes
 class Santa
 
-  def initialize
+  def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
+    @gender = gender
+    @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
   end
 
   def speak
@@ -92,6 +96,24 @@ end
 
 # TESTER CODE
 
-nick = Santa.new
-nick.speak
-nick.eat_milk_and_cookies("chocolate chip")
+# nick = Santa.new("Male", "White")
+# p nick
+# nick.speak
+# nick.eat_milk_and_cookies("chocolate chip")
+
+santas = []
+# santas << Santa.new("agender", "black")
+# santas << Santa.new("female", "Latino")
+# santas << Santa.new("bigender", "white")
+# santas << Santa.new("male", "Japanese")
+# santas << Santa.new("female", "prefer not to say")
+# santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+# santas << Santa.new("N/A", "N/A")
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese_African", "prefer not to say", "Mystical Creatue (unicorn)", "N/A"]
+example_genders.length.times do |i|
+  santas << Santa.new(example_genders[i], example_ethnicities[i])
+end
+p santas
+
