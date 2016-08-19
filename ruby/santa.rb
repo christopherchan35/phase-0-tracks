@@ -76,8 +76,8 @@
 
 # Module 6.3: Attributes
 class Santa
-  attr_reader  :age, :ethnicity
-  attr_accessor :gender
+  attr_reader  :ethnicity
+  attr_accessor :age, :gender
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
@@ -107,21 +107,35 @@ end
 
 # TESTER CODE
 
-nick = Santa.new("Male", "White")
-p nick
-nick.speak
-nick.eat_milk_and_cookies("chocolate chip")
-p nick.celebrate_birthday
-p nick.get_mad_at("Rudolph")
-nick.gender = "test"
-p nick
+# nick = Santa.new("Male", "White")
+# p nick
+# nick.speak
+# nick.eat_milk_and_cookies("chocolate chip")
+# nick.celebrate_birthday
+# nick.get_mad_at("Rudolph")
+# nick.gender = "test"
+# p nick
 
 # santas = []
 
-# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-# example_ethnicities = ["black", "Latino", "white", "Japanese_African", "prefer not to say", "Mystical Creatue (unicorn)", "N/A"]
+ # example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+ # example_ethnicities = ["black", "Latino", "white", "Japanese_African", "prefer not to say", "Mystical Creatue (unicorn)", "N/A"]
 # example_genders.length.times do |i|
 #   santas << Santa.new(example_genders[i], example_ethnicities[i])
 # end
 # p santas
+
+
+# DRIVER CODE
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese_African", "prefer not to say", "Mystical Creatue (unicorn)", "N/A"]
+
+100.times do |santa|
+  santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+  santa.age = rand(0..140)
+  puts "This santa is #{santa.gender}."
+  puts "That is of #{santa.ethnicity} ethnicity."
+  puts "They are #{santa.age} years old"
+  puts "\n"
+end
 
