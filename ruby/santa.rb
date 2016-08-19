@@ -98,6 +98,11 @@ class Santa
   def celebrate_birthday
     @age += 1
   end
+
+  def get_mad_at(bad_reindeer)
+    @reindeer_ranking.delete_at(@reindeer_ranking.index(bad_reindeer))
+    @reindeer_ranking.push(bad_reindeer)
+  end
 end
 
 # TESTER CODE
@@ -107,6 +112,7 @@ p nick
 nick.speak
 nick.eat_milk_and_cookies("chocolate chip")
 p nick.celebrate_birthday
+p nick.get_mad_at("Rudolph")
 
 # santas = []
 
