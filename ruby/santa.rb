@@ -76,8 +76,8 @@
 
 # Module 6.3: Attributes
 class Santa
-  attr_reader
-  attr_accessor :age
+  attr_reader  :age, :ethnicity
+  attr_accessor :gender
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
@@ -113,6 +113,8 @@ nick.speak
 nick.eat_milk_and_cookies("chocolate chip")
 p nick.celebrate_birthday
 p nick.get_mad_at("Rudolph")
+nick.gender = "test"
+p nick
 
 # santas = []
 
