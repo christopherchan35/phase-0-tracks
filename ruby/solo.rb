@@ -6,16 +6,22 @@
 
 
 class Charmander
-  attr_reader :name
+  attr_reader :name, :level
   attr_accessor :moves
 
-  def initialize
-    @name = "Charmander"
-    @level = 5
+  def initialize(name, level, move)
+    if name == ''
+      @name = "Charmander"
+    else
+      @name = name
+    end
+    @level = level
     @moves = ["Scratch", "Growl"]
-    puts "#{@name} is level #{@level}"
-    puts "It knows:"
-    @moves.each { |move| puts "#{move}" }
+    @moves << move
+    # puts "#{@name} is level #{@level}"
+    # puts "It knows:"
+    # @moves.each { |move| puts "#{move}" }
+    # puts "\n"
   end
 
   def level_up
@@ -33,7 +39,7 @@ end
 
 
 # TESTER CODE
-c = Charmander.new
+# c = Charmander.new
 # puts c.use_move("Scratch")
 # # c.name = "Billy"
 # puts c.name
@@ -45,3 +51,30 @@ c = Charmander.new
 # puts c.moves
 
 # DRIVER CODE
+poke_box = []
+
+puts "Would you like to make a Charmander? (Yes/No)"
+continue = gets.chomp
+
+until continue == 'No' do
+  puts "What would you like to name your charmander?"
+  new_name = gets.chomp
+  puts "What level is it?"
+  new_level = gets.chomp.to_i
+  puts "What move does your charmander know?"
+  new_move = gets.chomp
+  puts "\n"
+  charmander = Charmander.new(new_name, new_level, new_move)
+  poke_box << charmander
+  puts "Would you like to make a Charmander? (Yes/No)"
+  continue = gets.chomp
+  puts "\n"
+end
+
+poke_box.each do |charmander|
+  puts "#{charmander.name} is level #{charmander.level}"
+  puts "It knows:"
+  charmander.moves.each { |move| puts "#{move}" }
+  puts "\n"
+end
+# p charmander
