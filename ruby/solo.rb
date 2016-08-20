@@ -6,6 +6,8 @@
 
 
 class Charmander
+  attr_reader :name
+  attr_accessor :moves
 
   def initialize
     @name = "Charmander"
@@ -21,7 +23,7 @@ class Charmander
   end
 
   def use_move(selected_move)
-    "#{@name} used #{@moves}"
+    "#{@name} used #{@moves[@moves.index(selected_move)]}"
   end
 
   def rename(new_name)
@@ -29,5 +31,17 @@ class Charmander
   end
 end
 
+
+# TESTER CODE
 c = Charmander.new
-p c.use_move("Scratch")
+# puts c.use_move("Scratch")
+# # c.name = "Billy"
+# puts c.name
+# c.rename("Billy")
+# puts c.name
+
+
+# c.moves << "Flamethrower"
+# puts c.moves
+
+# DRIVER CODE
