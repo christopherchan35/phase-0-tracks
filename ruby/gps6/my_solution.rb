@@ -97,3 +97,12 @@ end
 #=======================================================================
 # Reflection Section
 
+# The difference is that the hash rocket is a bit oudated while the symbol method is the newer way of assigning in hashes. The hash rocket can be used to assign into both a string and a symbol, while the colon/symbol method is used for assigning into a symbol.
+
+# Require_relative is needed to access the data in the other file. Require allows you to access data anywhere on your computer. require_relative allows you to use a path within the directory.
+
+# Some ways to iterate through a hash are the each method and the map method.
+
+# Virus effects was just using instance variables, therefore none of them were required to be passed into the methods.
+
+# This challenge really helped me with refactoring and what to look for when I am refactoring. Not to change code for the sake of changing it, but to make it less DRY.
