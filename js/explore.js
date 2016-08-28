@@ -14,6 +14,8 @@ function reverse(word){
   return new_string;
 }
 
+// DRIVER CODE
+console.log("Here is 'hello' reversed: ")
 reverse_string = reverse("hello");
 if (1 == 1){
   console.log(reverse_string);
