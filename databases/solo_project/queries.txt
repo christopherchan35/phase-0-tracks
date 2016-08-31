@@ -1,0 +1,72 @@
+Release 2: Execute SQL Queries
+
+1. Display the information in one table (either table is fine).
+
+  cmd:
+  sqlite> SELECT * FROM customers;
+
+  result:
+  1|Chris Chan|123 Test St|415-123-4567
+  2|John Doe|456 Tester Ave|555-555-5555
+  3|Sally Sue|1 Coding Way|001-101-0101
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+  cmd:
+  sqlite> UPDATE customers SET phone="123-456-7890" WHERE name="Chris Chan";
+
+  result:
+  1|Chris Chan|123 Test St|123-456-7890
+  2|John Doe|456 Tester Ave|555-555-5555
+  3|Sally Sue|1 Coding Way|001-101-0101
+
+3. Display the information in both tables using one query
+
+  cmd:
+  sqlite> SELECT * FROM purchases, customers WHERE purchases.customer_id = customers.id;
+
+  result:
+  1|1|Bread|2.99|1|Chris Chan|123 Test St|123-456-7890
+  2|3|Milk|1.75|3|Sally Sue|1 Coding Way|001-101-0101
+  3|2|Eggs|5|2|John Doe|456 Tester Ave|555-555-5555
+  4|1|Chicken|6.99|1|Chris Chan|123 Test St|123-456-7890
+  5|2|Honey|1.99|2|John Doe|456 Tester Ave|555-555-5555
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query
+
+  cmd:
+  sqlite> SELECT customers.name, purchases.product, purchases.price FROM purchases JOIN customers ON purchases.customer_id = customers.id;
+
+  result:
+  Chris Chan|Bread|2.99
+  Sally Sue|Milk|1.75
+  John Doe|Eggs|5
+  Chris Chan|Chicken|6.99
+  John Doe|Honey|1.99
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+  cmd:
+  DELETE FROM purchases where price<=2.00;
+
+  result:
+  1|1|Bread|2.99
+  3|2|Eggs|5
+  4|1|Chicken|6.99
+
+Release 3: Research on Your Own
+1. There are many other different kinds of joins such as inner, left, right, and full joins. Based on the errors I got while messing around it looks like RIGHT and FULL OUTER JOINS are not supported by sqlite3.
+
+2.
+
+cmd : SELECT name, phone FROM customers INNER JOIN purchases ON customers.id = purchases.customer_id;
+
+Chris Chan|123-456-7890
+John Doe|555-555-5555
+Chris Chan|123-456-7890
+
+cmd : SELECT customer_id, product, price FROM purchases LEFT JOIN customers ON purchases.customer_id = customers.id;
+
+1|Bread|2.99
+2|Eggs|5
+1|Chicken|6.99
