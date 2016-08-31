@@ -53,3 +53,20 @@ Release 2: Execute SQL Queries
   1|1|Bread|2.99
   3|2|Eggs|5
   4|1|Chicken|6.99
+
+Release 3: Research on Your Own
+1. There are many other different kinds of joins such as inner, left, right, and full joins. Based on the errors I got while messing around it looks like RIGHT and FULL OUTER JOINS are not supported by sqlite3.
+
+2.
+
+cmd : SELECT name, phone FROM customers INNER JOIN purchases ON customers.id = purchases.customer_id;
+
+Chris Chan|123-456-7890
+John Doe|555-555-5555
+Chris Chan|123-456-7890
+
+cmd : SELECT customer_id, product, price FROM purchases LEFT JOIN customers ON purchases.customer_id = customers.id;
+
+1|Bread|2.99
+2|Eggs|5
+1|Chicken|6.99
