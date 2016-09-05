@@ -33,7 +33,7 @@ def number_of_miles(db, name)
   sum = db.execute("SELECT SUM(distance_ran)
     FROM runs
     WHERE name = ?", name)
-  puts "You've ran #{sum} miles!"
+  puts "You've ran #{sum[0][0]} miles!"
 end
 
 # Shows average pace
@@ -41,7 +41,7 @@ def show_pace(db, name)
   avg_pace = db.execute("SELECT SUM(distance_ran)/AVG(time_ran)
     FROM runs
     WHERE name = ?", name)
-  puts "Your average pace is #{avg_pace} mph."
+  puts "Your average pace is #{avg_pace[0][0]} minutes per mile."
 end
 
 # Shows total runs for the specific user
@@ -49,7 +49,7 @@ def show_total_runs(db, name)
   total_run = db.execute("SELECT SUM(number_of_runs)
     FROM runs
     WHERE name = ?", name)
-  puts "You've ran #{total_run} times!"
+  puts "You've ran #{total_run[0][0]} times!"
 end
 
 ######################
