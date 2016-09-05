@@ -44,8 +44,18 @@ def show_pace(db, name)
   puts "Your average pace is #{avg_pace} mph."
 end
 
+# Shows total runs for the specific user
+def show_total_runs(db, name)
+  total_run = db.execute("SELECT SUM(number_of_runs)
+    FROM runs
+    WHERE name = ?", name)
+  puts "You've ran #{total_run} times!"
+end
 
-# USER INTERFACE
+######################
+### USER INTERFACE ###
+######################
+
 puts "Welcome to the Run Tracker 2000!
   Please enter your name: "
 user_name = gets.chomp
@@ -53,21 +63,35 @@ puts "Hello #{user_name}, what would you like to do?
 (1) Add a new run
 (2) Show number of miles ran
 (3) Show average pace
-(4) Show total number of runs"
+(4) Show total number of runs
+type 'done' when finished"
+
 user_choice = gets.chomp
 
-if user_choice.to_i == 1
-  puts "Enter miles ran: "
-  miles = gets.chomp
-  puts "Enter pace per mile: "
-  pace = gets.chomp
-  update_user(db, user_name, 1, miles, pace)
+until user_choice == 'done'
+  if user_choice.to_i == 1
+    puts "Enter miles ran: "
+    miles = gets.chomp
+    puts "Enter pace per mile: "
+    pace = gets.chomp
+    update_user(db, user_name, 1, miles, pace)
 
-elsif user_choice.to_i == 2
-  number_of_miles(db, user_name)
-elsif user_choice.to_i == 3
-  show_pace(db, user_name)
-elsif user_choice.to_i == 4
+  elsif user_choice.to_i == 2
+    number_of_miles(db, user_name)
+  elsif user_choice.to_i == 3
+    show_pace(db, user_name)
+  elsif user_choice.to_i == 4
+    show_total_runs(db, user_name)
+  elsif
+    puts "Invalid input, please enter 1-4: "
+    user_choice = gets.chomp
+  end
+  puts "\nWould you like to do anything else?
+  (1) Add a new run
+  (2) Show number of miles ran
+  (3) Show average pace
+  (4) Show total number of runs
+  type 'done' when finished"
+  user_choice = gets.chomp
 
-else
 end
