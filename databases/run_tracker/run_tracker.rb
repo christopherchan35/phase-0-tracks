@@ -38,10 +38,11 @@ end
 
 # Shows average pace
 def show_pace(db, name)
-  avg_pace = db.execute("SELECT SUM(distance_ran)/AVG(time_ran)
+  avg_pace = db.execute("SELECT AVG(time_ran)
     FROM runs
     WHERE name = ?", name)
-  puts "Your average pace is #{avg_pace[0][0]} minutes per mile."
+  a = avg_pace[0][0]
+  puts "Your average pace is #{'%.2f' % a} minutes per mile."
 end
 
 # Shows total runs for the specific user
