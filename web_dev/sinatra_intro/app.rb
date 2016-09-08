@@ -10,6 +10,13 @@ db.results_as_hash = true
 # GET /
 get '/' do
   "#{params[:name]} is #{params[:age]} years old."
+  # "<h1><a href='http://www.google.com'>Hello</a> world!</h1>"
+  # name = params[:name]
+  # if name
+  #   "Hello, #{name}!"
+  # else
+  #   "Hello, you!"
+  # end
 end
 
 # write a GET route with
