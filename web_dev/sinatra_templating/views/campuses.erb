@@ -1,0 +1,14 @@
+<html>
+<head>
+  <title>Campuses</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>List of Campuses</h1>
+  <ul>
+    <% @campuses.each do |campus| %>
+      <li><%= campus['location'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>

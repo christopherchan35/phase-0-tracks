@@ -27,7 +27,23 @@ end
 # add static resources
 
 # search for students by campus
-get '/students/search' do
+get '/search' do
   @students = db.execute("SELECT * FROM students WHERE students.campus=?", [params['campus']])
   erb :search
+end
+
+# show all campuses
+get '/campuses' do
+  @campuses = db.execute("SELECT * FROM campus")
+  erb :campuses
+end
+
+# adding campus to campus table
+get '/campus/new' do
+  erb :newcampus
+end
+
+post '/campus' do
+  db.execute("INSERT INTO campus (location) VALUES (?)", [params['location']])
+  redirect '/campuses'
 end
