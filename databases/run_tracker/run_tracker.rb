@@ -50,7 +50,7 @@ def show_total_runs(db, name)
   total_run = db.execute("SELECT SUM(number_of_runs)
     FROM runs
     WHERE name = ?", name)
-  puts "You've ran #{total_run[0][0]} times!"
+  puts "You've ran #{total_run} times!"
 end
 
 ######################

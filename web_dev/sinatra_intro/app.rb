@@ -84,6 +84,8 @@ end
 
 # route that allows user to search the database, filter the students displayed
 # http://127.0.0.1:9393/search/SF
+# http://127.0.0.1:9393/search/NYC
+
 
 get '/search/:campus' do
   campus = params[:campus]
