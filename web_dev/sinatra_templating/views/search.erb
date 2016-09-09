@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Search for Students</title>
+  </head>
+  <body>
+    <p>Filter students by campus: </p>
+    <form action="/search" method="GET">
+      <input type="text" name="campus" placeholder="Campus">
+      <button type="submit">Enter</button>
+    </form>
+
+    <ul>
+      <% @students.each do |student| %>
+        <li><%= student['name'] %>, <%= student['age'] %></li>
+      <% end %>
+    </ul>
+
+  </body>
+</html>
