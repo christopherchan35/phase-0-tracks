@@ -3,8 +3,13 @@ img {
   height: 200px;
 }
 
-ul {
-  float: left;
-  margin: 0 5px;
-  display: inline-block;
+div {
+  /*margin: 0 5px;*/
+  /*float: left;*/
+  /*display: inline-block;
+  vertical-align: text-top;*/
 }
+
+/*.class {
+  text-align: top;
+}*/
